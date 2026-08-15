@@ -1,0 +1,10 @@
+employees:
+  - name: 张三
+    aliases: ["张三", "Zhang San", "三哥"]
+    active: true
+  - name: 李四
+    aliases: ["李四", "Lisi"]
+    active: true
+  - name: 王五
+    aliases: ["王五"]
+    active: true

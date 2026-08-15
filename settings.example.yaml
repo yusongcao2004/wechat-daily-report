@@ -1,0 +1,34 @@
+wechat:
+  group_name: "日报群"
+  # Fail closed: preview locally until both this value and CLI --send are set.
+  send_report_to_group: false
+  # How many screenfuls to scroll upward while collecting today's messages.
+  max_scroll_pages: 18
+  # Wait time after each WeChat UI operation, in seconds.
+  ui_delay_seconds: 0.5
+
+schedule:
+  start_time: "00:00"
+  report_time: "20:00"
+  timezone: "local"
+
+report:
+  title_suffix: "日报检查结果"
+  include_employee_details: true
+  work_keywords:
+    - "完成"
+    - "进度"
+    - "问题"
+    - "风险"
+    - "请假"
+    - "客户"
+    - "项目"
+    - "延期"
+    - "阻塞"
+
+runtime:
+  output_dir: "reports"
+  evidence_dir: "evidence"
+  dry_run: true
+  # Optional. Leave empty if tesseract is on PATH.
+  tesseract_cmd: ""

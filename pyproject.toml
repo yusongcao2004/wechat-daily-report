@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wechat-daily-report"
+version = "0.1.0"
+description = "Fail-closed Windows WeChat group daily image-report checker"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "Pillow>=10.0.0",
+  "pyautogui>=0.9.54",
+  "pyperclip>=1.8.2",
+  "pytesseract>=0.3.10",
+  "pywinauto>=0.6.8; platform_system == 'Windows'",
+  "PyYAML>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<10"]
+
+[project.scripts]
+wechat-daily-report = "wechat_daily_report.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wechat_daily_report*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
